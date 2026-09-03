@@ -1,71 +1,88 @@
 let playlist = [
-    'Numb',
-    'In The End',
-    'Enter Sandman',
-    'Fear of the Dark',
-    'Breaking the Law',
-    'Master of Puppets',
-    'The Trooper',
-    'Paranoid',];
+    "Numb",
+    "In The End",
+    "Enter Sandman",
+    "Fear of the Dark",
+    "Breaking the Law",
+    "Master of Puppets",
+    "The Trooper",
+    "Paranoid"
+];
 
-let opcao;
+console.log ("Playlist atual: " + playlist.join(", "));
+console.log ("Opções:");
+console.log (" 1 - Pesquisar música")
+console.log (" 2 - Criar seleção")
+console.log (" 3 - Remover música")
+console.log (" 4 - Inserir música")
+console.log (" 5 - Ordenar A-Z")
+console.log (" 6 - Inverter playlist")
+console.log (" 7 - Exibir playlist")
+console.log (" 8 - Exibir playlist completa")
+console.log (" 0 - Sair")
 
-while (opcao != 0) {
-    console.log('Spotify')
-    console.log('1-pesquisar música')
-    console.log('2-criar seleção')
-    console.log('3-remover música')
-    console.log('4-inserir música')
-    console.log('5-ordenar em ordem alfabética')
-    console.log('6-inverter playlist')
-    console.log('7-mostrar playlist')
-    console.log('0-sair')
+let opcao = 1
 
-    opcao = Number(prompt('escolha uma opção:'))
 
-    if (opcao == 1) {
-        let musica = prompt('escreva o nome da música:')
-        if (playlist.includes(musica)) {
-            let pos = playlist.indexOf(musica)
-        console.log('a música ' + musica + ' existe na playlist na posição ' + pos)
-        } else {
-            console.log('a música não existe na playlist')
-        }
+if (opcao = 1) {console.log ("Qual músicsa você quer ouvir? Digiet abaixo..");
 
-    } else if (opcao == 2) {
-        let pos1 = Number(prompt('digite a primeira posição:'))
-        let pos2 = Number(prompt('digite a segunda posição:'))
-        let selecao = playlist.slice(pos1, pos2 + 1)
-        console.log('seleção:')
-        console.log(selecao.join('/'))
+if (playlist.includes("Fear of the Dark")) {
+    console.log ("Música encontrada! Na posição: " + playlist.indexOf("Fear of the Dark"));
+} 
 
-    } else if (opcao == 3) {
-        let pos = Number(prompt('digite a posição da música para remover:'))
-        console.log('música que será removida: ' + playlist[pos])
-        playlist.splice(pos, 1)
-        console.log('música removida')
+else {
+    console.log ("Música não encontrada!");
+}
+}
 
-    } else if (opcao == 4) {
-        let musica = prompt('escreva o nome da música:')
-        let pos = Number(prompt('insira a posição onde inserir:'))
-        playlist.splice(pos, 0, musica)
-        console.log('música inserida')
+else if (opcao = 2) { 
+    console.log ("Informe duas posições da playlist para criar uma nova playlist:")
 
-    } else if (opcao == 5) {
-        playlist.sort()
-        console.log('playlist em ordem')
+        let posicoes = playlist.slice(1, 4);
 
-    } else if (opcao == 6) {
-        playlist.reverse();
-        console.log('playlist invertida')
+    console.log ("Nova playlist criada: " + posicoes);
+}
 
-    } else if (opcao == 7) {
-        console.log(playlist.join('/'))
+else if (opcao = 3) {
+    console.log ("Vamos remover uma música da playlist. Digite a música que deseja remover: ");
 
-    } else if (opcao == 0) {
-        console.log('saindo');
+        playlist.splice("Breaking the Law", 1);
+    
+    console.log ("Playlist atualizada: " + playlist);
+}
 
-    } else {
-        console.log('opção inválida')
-    }
+else if (opcao = 4) {
+        console.log ("vamos adicionar uma música. Digite o nome da música que deseja adicionar: ");
+
+    let novamusica = "Billie jean";
+
+        console.log ("Informe a posição que deseja adicionar a música: ");
+
+    playlist.splice(2, 0, novamusica);
+
+        console.log ("Playlist atualizada: " + playlist);
+}
+
+else if (opcao = 5) {
+    console.log ("Playlist em ordem alfabética:");
+    console.log (playlist.sort());
+}
+
+else if (opcao = 6) {
+    console.log ("Playlist invertida:");
+    console.log (playlist.reverse());
+}
+
+else if (opcao = 7) {
+    console.log ("transformando em string:");
+    console.log (playlist.join("|"));
+}
+
+else if (opcao = 8) {
+    console.log ("==== Minha Playlist ====");
+    console.log (playlist.join(", "));
+}
+
+else {
+    console.log ("Você saiu")
 }
